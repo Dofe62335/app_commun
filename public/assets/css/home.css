@@ -1,0 +1,123 @@
+/* home.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  /* Hero section avec image de fond */
+  .hero {
+    position: relative;
+    background: url('/volpe-site/public/assets/img/classe.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Fond noir semi-transparent */
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Contenu centré */
+  .hero-content {
+    position: relative;
+    color: white;
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  /* Logo stylé */
+  .logo {
+    width: 140px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 3px black);
+  }
+  
+  /* Titre principal */
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* Bouton CTA */
+  .cta {
+    padding: 12px 24px;
+    background: #2e8b57;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  .cta:hover {
+    background: #256c46;
+  }
+  
+  /* Intro section */
+  .intro {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .intro h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: #2e8b57;
+  }
+  
+  /* Fonctionnalités */
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .feature {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .hero-content img {
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    font-size: 14px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 1.8em;
+    }
+    .logo {
+      width: 100px;
+    }
+    .feature {
+      min-width: 150px;
+    }
+  }
+  

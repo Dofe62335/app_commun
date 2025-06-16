@@ -1,0 +1,173 @@
+/* === Base === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* === Header === */
+.prof-header {
+  background-color: #2e8b57;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.prof-header h1 {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.prof-header .right {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logout-btn,
+.header-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover,
+.header-btn:hover {
+  background-color: #c0392b;
+}
+
+.header-btn {
+  background-color: #256c45;
+}
+.header-btn:hover {
+  background-color: #1e5b39;
+}
+
+/* === Contenu principal === */
+.prof-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* === Boîtes de données === */
+.info-box {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  padding: 35px 30px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.info-box:hover {
+  transform: translateY(-2px);
+}
+
+/* === Titres de section === */
+.info-box h2 {
+  color: #2e8b57;
+  font-size: 1.25em; /* 🔽 Réduit ici */
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* === Graphiques === */
+canvas {
+  margin: 20px 0;
+  max-width: 100%;
+}
+
+
+
+/* === Tableau live === */
+.live-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.96em;
+}
+
+.live-table th,
+.live-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+.live-table th {
+  background-color: #f4f4f4;
+  color: #444;
+}
+
+/* === Selecteur de classe === */
+select {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+/* === Alertes === */
+.alert-box {
+  padding: 22px;
+  background-color: #fff8e1;
+  border-left: 6px solid #ffca2c;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.alert {
+  margin-bottom: 12px;
+  color: #664d03;
+  font-weight: 500;
+}
+
+#presenceChart {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .prof-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .prof-header .right {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .prof-content {
+    padding: 20px;
+  }
+
+  .info-box {
+    padding: 25px 20px;
+  }
+}

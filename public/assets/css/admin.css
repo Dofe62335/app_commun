@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.admin-header {
+    background-color: #2e8b57;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+}
+
+.logout-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: #c0392b;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.admin-main {
+    display: flex;
+    padding: 30px;
+    gap: 40px;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.create-form input {
+    max-width: 90%;
+    margin: 0 auto 10px;
+}
+
+.create-form input, .create-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.create-form button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.create-form button:hover {
+    background-color: #256c46;
+}
+
+.user-list {
+    list-style: none;
+    padding: 0;
+}
+
+.user-list li {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.danger {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.alert {
+    margin: 0 0 15px;
+    padding: 10px;
+    background-color: #f0e68c;
+    border-left: 5px solid #f1c40f;
+    border-radius: 5px;
+}
