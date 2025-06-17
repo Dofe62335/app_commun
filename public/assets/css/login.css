@@ -1,33 +1,46 @@
 body {
   background: #f0f2f5;
   font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .login-container {
-  width: 300px;
-  margin: 80px auto;
+  width: 100%;
+  max-width: 350px;
   background: white;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   text-align: center;
+  box-sizing: border-box;
+  margin: 20px;
 }
 
 input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 12px;
   background: #2185d0;
   color: white;
   border: none;
   border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
@@ -37,4 +50,32 @@ button:hover {
 .error {
   color: red;
   font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.back-home {
+  margin-top: 20px;
+}
+
+.back-home a {
+  text-decoration: none;
+  color: #2185d0;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-home a:hover {
+  color: #1864ab;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  input, button {
+    font-size: 15px;
+  }
 }
