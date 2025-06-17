@@ -7,7 +7,7 @@ use Dompdf\Options;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $dataTemp = Capteur::getLastTemperatureData(5);
-$dataGaz = Capteur::getLastCO2Data(5);
+$dataButane = Capteur::getLastButaneData(5);
 $dataPresence = Capteur::getLastPresenceData(1);
 
 function calcStats($array, $key) {
@@ -21,7 +21,7 @@ function calcStats($array, $key) {
 }
 
 $tempStats = calcStats($dataTemp, 'temp');
-$gazStats = calcStats($dataGaz, 'taux');
+$butaneStats = calcStats($dataButane, 'value');
 $presenceCount = $dataPresence[0]['personnes_count'] ?? '-';
 $maxClasse = 18;
 
@@ -67,24 +67,24 @@ ob_start();
 <p>Aucune donnée de température disponible.</p>
 <?php endif; ?>
 
-<h2>🟢 CO₂</h2>
+<h2>🟠 Butane</h2>
 <ul>
-    <li>Moyenne : <?= $gazStats['avg'] ?> ppm</li>
-    <li>Min : <?= $gazStats['min'] ?> ppm</li>
-    <li>Max : <?= $gazStats['max'] ?> ppm</li>
+    <li>Moyenne : <?= $butaneStats['avg'] ?> ppm</li>
+    <li>Min : <?= $butaneStats['min'] ?> ppm</li>
+    <li>Max : <?= $butaneStats['max'] ?> ppm</li>
 </ul>
 
-<?php if (!empty($dataGaz)): ?>
+<?php if (!empty($dataButane)): ?>
 <table>
-    <thead><tr><th>Date</th><th>Taux CO₂</th></tr></thead>
+    <thead><tr><th>Date</th><th>Taux Butane (ppm)</th></tr></thead>
     <tbody>
-    <?php foreach ($dataGaz as $row): ?>
-        <tr><td><?= $row['date_time_taux'] ?></td><td><?= $row['taux'] ?></td></tr>
+    <?php foreach ($dataButane as $row): ?>
+        <tr><td><?= $row['timestamp'] ?></td><td><?= $row['value'] ?></td></tr>
     <?php endforeach; ?>
     </tbody>
 </table>
 <?php else: ?>
-<p>Aucune donnée de CO₂ disponible.</p>
+<p>Aucune donnée de butane disponible.</p>
 <?php endif; ?>
 
 <h2>👥 Présence (Classe G4)</h2>
@@ -96,7 +96,6 @@ ob_start();
 <?php
 $html = ob_get_clean();
 
-// DEBUG (facultatif) : tu peux supprimer cette ligne après vérif
 file_put_contents(__DIR__ . "/debug_html_output.html", $html);
 
 $options = new Options();
