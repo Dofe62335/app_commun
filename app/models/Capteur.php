@@ -4,7 +4,7 @@ require_once __DIR__ . '/../config/db.php';
 class Capteur {
     public static function getLastTemperatureData($limit = 10) {
         global $pdo;
-        $stmt = $pdo->prepare("SELECT temp, date_time_temp FROM test_temperature2 ORDER BY date_time_temp DESC LIMIT ?");
+        $stmt = $pdo->prepare("SELECT temp, date_time_temp FROM test_temperature ORDER BY date_time_temp DESC LIMIT ?");
         $stmt->execute([$limit]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -24,7 +24,7 @@ class Capteur {
     }
     public static function getActiveBuzzers() {
     global $pdo;
-    $stmt = $pdo->query("SELECT * FROM buzzertype WHERE flagactivation = true ORDER BY id_alerte ASC");
+    $stmt = $pdo->query("SELECT * FROM buzzer WHERE flagactivation = true ORDER BY id_alerte ASC");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
