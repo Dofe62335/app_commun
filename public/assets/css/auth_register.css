@@ -1,0 +1,114 @@
+/* Général */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+
+
+.register-container h1 {
+  color: #2e8b57;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulaire */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Boutons */
+.btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #2e7d32;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1b5e20;
+}
+
+/* Message d'erreur */
+p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Lien retour */
+.back-home {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-home a {
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-home a:hover {
+  color: #1c5b3c;
+}
+
+/* Responsive */
+@media (max-width: 380px) {
+  .register-container {
+    padding: 25px 20px;
+    border-radius: 8px;
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
