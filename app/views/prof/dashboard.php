@@ -57,9 +57,9 @@ $data = ProfDashboardController::getDashboardData();
       </ul>
     </section>
 
-    <!-- 🟢 CO2 -->
+    <!-- 🟠 Butane -->
     <section class="info-box" id="gaz-section">
-      <p>Chargement des données CO₂...</p>
+      <p>Chargement des données Butane...</p>
     </section>
 
     <!-- 👥 Présence -->
@@ -74,6 +74,39 @@ $data = ProfDashboardController::getDashboardData();
       <p id="presence-display">Présence actuelle : -</p>
       <canvas id="presenceChart" height="120"></canvas>
     </section>
+      
+
+    <section class="info-box <?= !empty($data['buzzers']) ? 'buzzer-alert' : '' ?>">
+  <h2>
+    🔊 Buzzers actifs
+    <?php if (!empty($data['buzzers'])): ?>
+      <span class="badge-pulse">Actif</span>
+    <?php endif; ?>
+  </h2>
+
+  <?php if (!empty($data['buzzers'])): ?>
+    <table class="live-table">
+      <thead>
+        <tr>
+          <th>Fréquence (Hz)</th>
+          <th>Durée (ms)</th>
+          <th>Répétition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($data['buzzers'] as $buzzer): ?>
+          <tr>
+            <td><?= $buzzer['freq'] ?></td>
+            <td><?= $buzzer['duration'] ?></td>
+            <td><?= $buzzer['repetition'] ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  <?php else: ?>
+    <p class="no-buzzer-msg">🔇 Aucun buzzer actif pour le moment.</p>
+  <?php endif; ?>
+</section>
 
   </main>
 </body>
