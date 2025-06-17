@@ -54,3 +54,75 @@ h2 {
   color: #2e8b57;
   margin-top: 15px;
 }
+
+/* === Température actuelle (grosse valeur) === */
+.temp-current .temp-value {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #e67e22;
+  margin-top: 20px;
+}
+
+/* === Section buzzers actifs === */
+.buzzers ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.buzzers ul li {
+  background-color: #f0f9ff;
+  color: #004085;
+  border: 1px solid #b8daff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.buzzers ul li:hover {
+  background-color: #e2f0ff;
+}
+
+.buzzers p {
+  font-style: italic;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* === Responsive global === */
+@media (max-width: 768px) {
+  .visiteur-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logout-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .visiteur-content {
+    padding: 20px;
+  }
+
+  .info-box,
+  .presence-box {
+    padding: 20px;
+  }
+
+  .temp-current .temp-value {
+    font-size: 2.4em;
+  }
+
+  .counter {
+    font-size: 2em;
+  }
+
+  .buzzers ul li {
+    font-size: 0.95em;
+    padding: 8px 12px;
+  }
+}
