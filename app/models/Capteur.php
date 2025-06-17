@@ -3,15 +3,15 @@ require_once __DIR__ . '/../config/db.php';
 
 class Capteur {
     public static function getLastTemperatureData($limit = 10) {
-        global $pdo; // ← obligatoire ici
+        global $pdo;
         $stmt = $pdo->prepare("SELECT temp, date_time_temp FROM test_temperature2 ORDER BY date_time_temp DESC LIMIT ?");
         $stmt->execute([$limit]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function getLastCO2Data($limit = 10) {
+    public static function getLastButaneData($limit = 10) { // ← nouveau
         global $pdo;
-        $stmt = $pdo->prepare("SELECT taux, date_time_taux FROM test_gaz ORDER BY date_time_taux DESC LIMIT ?");
+        $stmt = $pdo->prepare("SELECT value, timestamp, alert FROM capt_butane ORDER BY timestamp DESC LIMIT ?");
         $stmt->execute([$limit]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -22,4 +22,10 @@ class Capteur {
         $stmt->execute([$limit]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function getActiveBuzzers() {
+    global $pdo;
+    $stmt = $pdo->query("SELECT * FROM buzzertype WHERE flagactivation = true ORDER BY id_alerte ASC");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 }
