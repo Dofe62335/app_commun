@@ -62,8 +62,16 @@ body {
   align-items: center;
   gap: 32px;
   padding: 40px 20px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
+}
+
+/* === Grille 2 colonnes === */
+.prof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+  width: 100%;
 }
 
 /* === Boîtes de données === */
@@ -83,7 +91,7 @@ body {
 /* === Titres de section === */
 .info-box h2 {
   color: #2e8b57;
-  font-size: 1.25em; /* 🔽 Réduit ici */
+  font-size: 1.25em;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -96,8 +104,6 @@ canvas {
   margin: 20px 0;
   max-width: 100%;
 }
-
-
 
 /* === Tableau live === */
 .live-table {
@@ -143,12 +149,48 @@ select {
   font-weight: 500;
 }
 
+/* === Présence chart === */
 #presenceChart {
   width: 320px;
   height: 320px;
   margin: 0 auto;
 }
 
+/* === Style buzzer amélioré === */
+.no-buzzer-msg {
+  color: #888;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.buzzer-alert {
+  border: 2px solid #ff5252;
+  background-color: #fff0f0;
+  animation: pulse-bg 2s infinite;
+}
+
+.badge-pulse {
+  background: #ff5252;
+  color: white;
+  padding: 4px 10px;
+  margin-left: 12px;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: bold;
+  animation: pulseBadge 1.5s infinite;
+}
+
+/* Animations */
+@keyframes pulseBadge {
+  0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 82, 82, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}
+
+@keyframes pulse-bg {
+  0%, 100% { background-color: #fff0f0; }
+  50% { background-color: #ffe5e5; }
+}
 
 /* === Responsive === */
 @media (max-width: 768px) {
@@ -169,5 +211,9 @@ select {
 
   .info-box {
     padding: 25px 20px;
+  }
+
+  .prof-grid {
+    grid-template-columns: 1fr; /* une seule colonne en petit écran */
   }
 }
